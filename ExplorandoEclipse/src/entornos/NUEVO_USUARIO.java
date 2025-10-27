@@ -19,6 +19,8 @@ import javax.swing.SwingConstants;
 import java.awt.event.InputMethodListener;
 import java.awt.event.InputMethodEvent;
 import java.awt.Insets;
+import javax.swing.JTextArea;
+import java.awt.Cursor;
 
 public class NUEVO_USUARIO {
 
@@ -57,7 +59,7 @@ public class NUEVO_USUARIO {
 	private void initialize() {
 		frmUsuario = new JFrame();
 		frmUsuario.getContentPane().setBackground(Color.LIGHT_GRAY);
-		frmUsuario.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Ruben\\Pictures\\Screenshots\\gatologo.png"));
+		frmUsuario.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\usuario\\Pictures\\Screenshots\\gatologo.png"));
 		frmUsuario.setForeground(Color.GRAY);
 		frmUsuario.setType(Type.POPUP);
 		frmUsuario.setTitle("Nuevo \"Usuario\"");
@@ -124,32 +126,19 @@ public class NUEVO_USUARIO {
 		textField_3.setBounds(200, 298, 167, 20);
 		frmUsuario.getContentPane().add(textField_3);
 		
-		JTextField txtA = new JTextField();
-		txtA.setMargin(new Insets(0, 0, 0, 0));
-		txtA.addInputMethodListener(new InputMethodListener() {
-			public void caretPositionChanged(InputMethodEvent event) {
-			}
-			public void inputMethodTextChanged(InputMethodEvent event) {
-			}
-		});
-		txtA.setHorizontalAlignment(SwingConstants.LEFT);
-		txtA.setToolTipText("");
-		txtA.setColumns(10);
-		txtA.setFont(new Font("Arial", Font.PLAIN, 14));
-		txtA.setBounds(200, 398, 278, 106);
-		frmUsuario.getContentPane().add(txtA);
-		
 		passwordField = new JPasswordField();
 		passwordField.setBounds(200, 148, 167, 20);
 		frmUsuario.getContentPane().add(passwordField);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Teléfono");
+		rdbtnNewRadioButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		rdbtnNewRadioButton.setFont(new Font("Arial", Font.ITALIC, 12));
 		rdbtnNewRadioButton.setBackground(Color.LIGHT_GRAY);
 		rdbtnNewRadioButton.setBounds(199, 336, 73, 23);
 		frmUsuario.getContentPane().add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Correo electrónico");
+		rdbtnNewRadioButton_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		rdbtnNewRadioButton_1.setFont(new Font("Arial", Font.ITALIC, 12));
 		rdbtnNewRadioButton_1.setBackground(Color.LIGHT_GRAY);
 		rdbtnNewRadioButton_1.setBounds(199, 357, 129, 23);
@@ -158,9 +147,15 @@ public class NUEVO_USUARIO {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setMaximumRowCount(2);
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Español", "Inglés"}));
-		comboBox.setEditable(true);
 		comboBox.setFont(new Font("Arial", Font.PLAIN, 14));
 		comboBox.setBounds(200, 197, 167, 22);
 		frmUsuario.getContentPane().add(comboBox);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setFont(new Font("Arial", Font.PLAIN, 14));
+		textArea.setWrapStyleWord(true);
+		textArea.setLineWrap(true);
+		textArea.setBounds(201, 404, 250, 108);
+		frmUsuario.getContentPane().add(textArea);
 	}
 }
