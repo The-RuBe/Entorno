@@ -4,6 +4,7 @@ public class FactorialApp {
 	public static void main(String[] args) {
 		int numero = 5;
 		int resultado = factorial(numero);
+
 		if (resultado != -1) {
 			System.out.println("El factorial de " + numero + " es " + resultado);
 		}
