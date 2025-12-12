@@ -1,6 +1,6 @@
 package ejercicio2;
 
-public class FactorialApp {
+public class FactorialAppMal {
 	public static void main(String[] args) {
 		int numero = 5;
 		int resultado = factorial(numero);
